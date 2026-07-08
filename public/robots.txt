@@ -1,0 +1,14 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Group 1: All standard search engine crawlers
+User-agent: *
+Allow: /
+
+# Exclude potential build fragments or systemic dynamic endpoints
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /build/
+
+# Explicitly link to the sitemap XML document to ensure discoverability
+Sitemap: https://yourdomain.com/sitemap.xml

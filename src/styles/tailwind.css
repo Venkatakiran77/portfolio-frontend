@@ -1,0 +1,54 @@
+/* src/styles/tailwind.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CUSTOM COMPONENT-LAYER UTILITIES
+   Small, genuinely reusable class compositions that would otherwise
+   require repeating the same long Tailwind class string in many
+   components. Kept minimal on purpose — most styling should live
+   in individual component files, not here.
+   ============================================================ */
+@layer components {
+  /* Standard page container — matches theme/spacing.js container tokens */
+  .container-page {
+    @apply max-w-xl mx-auto px-5 md:px-8 lg:px-12 w-full;
+  }
+
+  /* Base card surface — resting state shared by every card type */
+  .surface-card {
+    @apply bg-background-elevated border border-border-subtle rounded-lg shadow-card;
+  }
+
+  /* Eyebrow label styling (small uppercase accent labels above section titles) */
+  .text-eyebrow {
+    @apply text-xs font-semibold tracking-wider uppercase text-accent-primary;
+  }
+}
+
+/* ============================================================
+   CUSTOM UTILITY-LAYER ADDITIONS
+   For one-off utility classes Tailwind doesn't provide out of the box.
+   ============================================================ */
+@layer utilities {
+  /* Gradient text — used ONLY for the hero headline accent phrase,
+     per Phase 1 guidance to use gradient sparingly and intentionally */
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-info));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Hides scrollbar visually while keeping scroll functionality
+     (used for horizontal-scroll tag lists, if needed) */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

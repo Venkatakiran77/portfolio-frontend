@@ -1,0 +1,278 @@
+/* src/styles/globals.css */
+
+/* ============================================================
+   FONT FACES
+   Self-hosted for performance (no external font request blocking
+   render) — files referenced here should live in src/assets/fonts/
+   ============================================================ */
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   THEME CSS VARIABLES
+   Mirrors src/theme/colors.js and src/theme/shadow.js exactly.
+   IMPORTANT: if those JS files are edited, update these values too —
+   CSS cannot import JS directly, so this is the one place that
+   must be kept manually in sync.
+   Default (:root) = dark mode, matching the reference design default.
+   ============================================================ */
+:root,
+.dark {
+  /* Backgrounds */
+  --color-bg-primary: #0A0A0F;
+  --color-bg-secondary: #0F0F17;
+  --color-bg-elevated: #13131C;
+  --color-bg-overlay: rgba(10, 10, 15, 0.85);
+
+  /* Borders */
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-default: rgba(255, 255, 255, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Text */
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #A1A1AA;
+  --color-text-tertiary: #6B6B76;
+  --color-text-inverse: #0A0A0F;
+
+  /* Accent */
+  --color-accent-primary: #7C6AEF;
+  --color-accent-primary-hover: #8E7FF2;
+  --color-accent-primary-muted: rgba(124, 106, 239, 0.12);
+
+  /* Semantic states */
+  --color-success: #3DD68C;
+  --color-success-muted: rgba(61, 214, 140, 0.12);
+  --color-warning: #E8B94E;
+  --color-warning-muted: rgba(232, 185, 78, 0.12);
+  --color-error: #F0625E;
+  --color-error-muted: rgba(240, 98, 94, 0.12);
+  --color-info: #5B8DEF;
+  --color-info-muted: rgba(91, 141, 239, 0.12);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.36);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 0 0 1px rgba(124, 106, 239, 0.4), 0 0 24px rgba(124, 106, 239, 0.25);
+  --shadow-glow-strong: 0 0 0 1px rgba(124, 106, 239, 0.6), 0 0 40px rgba(124, 106, 239, 0.35);
+  --shadow-inner: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.light {
+  /* Backgrounds */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F7F7F9;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-overlay: rgba(255, 255, 255, 0.85);
+
+  /* Borders */
+  --color-border-subtle: rgba(10, 10, 15, 0.06);
+  --color-border-default: rgba(10, 10, 15, 0.1);
+  --color-border-strong: rgba(10, 10, 15, 0.16);
+
+  /* Text */
+  --color-text-primary: #0A0A0F;
+  --color-text-secondary: #4B4B55;
+  --color-text-tertiary: #8A8A94;
+  --color-text-inverse: #F5F5F7;
+
+  /* Accent */
+  --color-accent-primary: #6552E0;
+  --color-accent-primary-hover: #5642D6;
+  --color-accent-primary-muted: rgba(101, 82, 224, 0.08);
+
+  /* Semantic states */
+  --color-success: #1FA971;
+  --color-success-muted: rgba(31, 169, 113, 0.1);
+  --color-warning: #C8940F;
+  --color-warning-muted: rgba(200, 148, 15, 0.1);
+  --color-error: #D3413D;
+  --color-error-muted: rgba(211, 65, 61, 0.1);
+  --color-info: #4A7CE0;
+  --color-info-muted: rgba(74, 124, 224, 0.1);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(10, 10, 15, 0.04);
+  --shadow-sm: 0 2px 4px rgba(10, 10, 15, 0.06);
+  --shadow-md: 0 4px 12px rgba(10, 10, 15, 0.08);
+  --shadow-lg: 0 8px 24px rgba(10, 10, 15, 0.1);
+  --shadow-xl: 0 16px 48px rgba(10, 10, 15, 0.14);
+  --shadow-card: 0 1px 2px rgba(10, 10, 15, 0.04), 0 0 0 1px rgba(10, 10, 15, 0.06);
+  --shadow-card-hover: 0 12px 32px rgba(10, 10, 15, 0.12), 0 0 0 1px rgba(10, 10, 15, 0.1);
+  --shadow-glow: 0 0 0 1px rgba(101, 82, 224, 0.3), 0 0 24px rgba(101, 82, 224, 0.18);
+  --shadow-glow-strong: 0 0 0 1px rgba(101, 82, 224, 0.45), 0 0 40px rgba(101, 82, 224, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(10, 10, 15, 0.08);
+
+
+  /* 🛠️ Alias Mappings to fix missing colors in dark mode */
+  --color-bg: var(--color-bg-primary);
+  --color-surface: var(--color-bg-secondary);
+  --color-border: var(--color-border-default);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-accent-start: var(--color-accent-primary);
+  --color-accent-end: var(--color-accent-primary-hover);
+
+  /* 🛠️ Alias Mappings to fix missing colors in light mode */
+  --color-bg: var(--color-bg-primary);
+  --color-surface: var(--color-bg-secondary);
+  --color-border: var(--color-border-default);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-accent-start: var(--color-accent-primary);
+  --color-accent-end: var(--color-accent-primary-hover);
+}
+
+/* ============================================================
+   BASE RESETS
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(92, 97, 255, 0.12) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(91, 141, 239, 0.08) 0%,
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #08111f 0%,
+      #0a1020 18%,
+      #090d18 45%,
+      #080a12 70%,
+      #07080f 100%
+    );
+
+  background-attachment: fixed;
+
+  overflow-x: hidden;
+
+  transition: background .5s ease,
+    color .5s ease;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 45%,
+            rgba(0,0,0,.12) 80%,
+            rgba(0,0,0,.30) 100%
+        );
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Respect reduced-motion OS preference site-wide as a fallback,
+   in addition to per-animation checks in animations/variants.js */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   SCROLLBAR STYLING
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) var(--color-bg-primary);
+}
+
+/* ============================================================
+   SELECTION COLOR
+   ============================================================ */
+::selection {
+  background-color: var(--color-accent-primary-muted);
+  color: var(--color-accent-primary);
+}
