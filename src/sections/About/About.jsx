@@ -24,17 +24,17 @@ const INFO_ITEMS = [
   {
     icon: <MapPin size={16} />,
     label: "Location",
-    value: portfolioConfig.location,
+    value: portfolioConfig?.about?.infoCard.location,
   },
   {
     icon: <Mail size={16} />,
     label: "Email",
-    value: portfolioConfig.email,
+    value: portfolioConfig?.about?.infoCard.email,
   },
   {
     icon: <Phone size={16} />,
     label: "Phone",
-    value: portfolioConfig.phone,
+    value: portfolioConfig?.about?.infoCard.phone,
   },
   {
     icon: <CheckCircle2 size={16} />,
@@ -45,7 +45,7 @@ const INFO_ITEMS = [
   {
     icon: <Globe2 size={16} />,
     label: "Languages",
-    value: portfolioConfig.languages?.join(", "),
+    value: portfolioConfig?.about?.infoCard.languages?.join(", "),
   },
 ];
 console.log(portfolioConfig);
@@ -54,7 +54,7 @@ export function About() {
     <Section
       id="about"
       eyebrow="About Me"
-      title="Curious. Driven. Always Building."
+      title="Curious. Relentless. Always Shipping."
     >
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[280px_1fr_320px] lg:items-start">
         {/* Photo */}

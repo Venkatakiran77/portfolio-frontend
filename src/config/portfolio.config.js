@@ -51,7 +51,7 @@ export const portfolioConfig = {
   // STATS (hero stat bar + achievements section)
   // ------------------------------------------------------------
   stats: [
-    { id: 'experience', label: 'Years Experience', value: 3, suffix: '+' },
+    { id: 'experience', label: 'Years Experience', value: 2, suffix: '+' },
     { id: 'projects', label: 'Projects Completed', value: 10, suffix: '+' },
     { id: 'hours', label: 'Hours of Coding', value: 1000, suffix: '+' },
     { id: 'tech', label: 'Technologies Mastered', value: 5, suffix: '+' },
@@ -80,7 +80,7 @@ export const portfolioConfig = {
     infoCard: {
       location: 'Hyderabad, India',
       email: 'venkatakiran77@gmail.com',
-      phone: '+91 84660 29097',
+      phone: '+91 7702296369',
       availability: 'Open to opportunities',
       languages: ['English', 'Telugu', 'Hindi'],
     },

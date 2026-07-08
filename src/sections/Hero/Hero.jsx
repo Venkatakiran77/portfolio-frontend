@@ -40,7 +40,7 @@ const TRAITS = [
 const STATS = [
   {
     icon: <Code2 size={18} />,
-    value: 3,
+    value: 2,
     suffix: "+",
     label: "Years Experience",
   },

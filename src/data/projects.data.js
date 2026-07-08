@@ -114,7 +114,7 @@ export const projectsData = [
       { label: 'Inference', value: 'Real-time' },
     ],
     githubUrl: 'https://github.com/Venkatakiran77/AI-Tomato-Ripeness-Detection',
-    liveUrl: '',
+    liveUrl: 'https://www.youtube.com/watch?v=jc7agQ74Dr8',
     featured: true,
   },
 
