@@ -126,8 +126,8 @@ export const portfolioConfig = {
   // RESUME
   // ------------------------------------------------------------
   resume: {
-    fileName: 'Venkata_Kiran_Resume.pdf',
-    filePath: '/assets/resume/venkat_kiran_resume_new.pdf',
+    fileName: 'Yelam_Venkata_Kiran_Java_Full_Stack_Resume.pdf',
+    filePath: '/assets/resume/Yelam_Venkata_Kiran_Java_Full_Stack_Resume.pdf',
   },
 
   // ------------------------------------------------------------
